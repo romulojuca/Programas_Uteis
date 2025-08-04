@@ -1,0 +1,4 @@
+pyinstaller --onefile --noconsole --windowed main.py 
+-> criar o executavel com o pyinstaller
+
+.
