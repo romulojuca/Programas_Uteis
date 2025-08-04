@@ -1,12 +1,10 @@
 *.py linguist-language=Python
-*.py linguist-detectable=true
-*.html linguist-detectable=false
-*.css linguist-detectable=false
-*.ico linguist-detectable=false
-*.png linguist-detectable=false
-*.jpg linguist-detectable=false
-*.svg linguist-detectable=false
 *.ttf linguist-detectable=false
 *.pdf linguist-detectable=false
 *.txt linguist-detectable=false
 *.tex linguist-detectable=false
+*.ico linguist-detectable=false
+*.png linguist-detectable=false
+*.jpg linguist-detectable=false
+*.jpeg linguist-detectable=false
+*.svg linguist-detectable=false
