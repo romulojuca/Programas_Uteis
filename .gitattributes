@@ -1,10 +1,11 @@
 *.py linguist-language=Python
-
-# Evita que esses arquivos influenciem
-*.txt linguist-detectable=false
-*.pdf linguist-detectable=false
-*.ttf linguist-detectable=false
 *.ico linguist-detectable=false
+*.ttf linguist-detectable=false
+*.pdf linguist-detectable=false
 *.png linguist-detectable=false
 *.jpg linguist-detectable=false
-*.jpeg linguist-detectable=false
+*.html linguist-detectable=false
+*.txt linguist-detectable=false
+*.bat linguist-detectable=false
+*.ttc linguist-detectable=false
+*.ttf linguist-detectable=false
