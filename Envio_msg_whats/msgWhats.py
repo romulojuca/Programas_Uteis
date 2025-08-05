@@ -7,25 +7,28 @@ import time
 # Lista de contatos predefinida
 contatos = [
     "+5535997660937",
-    "+5535991528521"
+    "+5535997660937",
+    "+5535997660937",
+    "+5535997660937"
 ]
 
+
 # Função para envio individual agendado
-
-
 def enviar_individual():
     numero = entrada_numero.get()
+    # "1.0": significa pegar o texto a partir da linha 1, caractere 0 (ou seja, do início).
+    # tk.END: pega até o final do texto.
     mensagem = entrada_mensagem.get("1.0", tk.END).strip()
     hora = entrada_hora.get()
     minuto = entrada_minuto.get()
 
-    if not numero.startswith("+"):
-        messagebox.showwarning("Número inválido", "Use o formato +55...")
+    if not numero.startswith("+"):  # para ver se o primeiro caracter é o +
+        messagebox.showwarning("Número inválido", "Use o formato +55DDDNUMERO")
         return
     if not mensagem:
         messagebox.showwarning("Mensagem vazia", "Digite uma mensagem.")
         return
-    if not hora.isdigit() or not minuto.isdigit():
+    if not hora.isdigit() or not minuto.isdigit():  # para ver se é numero de 0 a 9
         messagebox.showwarning(
             "Hora inválida", "Hora e minuto devem ser números.")
         return
@@ -35,16 +38,15 @@ def enviar_individual():
 
     try:
         pywhatkit.sendwhatmsg(numero, mensagem, hora,
-                              minuto, wait_time=8, tab_close=True)
+                              minuto, wait_time=15, tab_close=True)
         log.insert(
             tk.END, f"⏰ Agendado para {numero} às {hora:02d}:{minuto:02d}\n")
         log.see(tk.END)
     except Exception as e:
         messagebox.showerror("Erro", f"Ocorreu um erro: {str(e)}")
 
+
 # Função para envio para todos agendado
-
-
 def enviar_para_todos():
     mensagem = entrada_mensagem.get("1.0", tk.END).strip()
     hora = entrada_hora.get()
@@ -72,7 +74,7 @@ def enviar_para_todos():
                 mensagem,
                 hora_envio,
                 minuto_envio,
-                wait_time=8,     # reduzido
+                wait_time=15,
                 tab_close=True
             )
 
@@ -97,7 +99,7 @@ entrada_numero.pack()
 # Mensagem
 tk.Label(janela, text="Mensagem:").pack(pady=5)
 entrada_mensagem = tk.Text(janela, height=5, width=50)
-entrada_mensagem.pack()
+entrada_mensagem.pack()  # faz ele aparecer na tela
 
 # Horário
 frame_hora = tk.Frame(janela)
