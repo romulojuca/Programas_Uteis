@@ -19,7 +19,7 @@ driver = webdriver.Chrome(service=Service(
     ChromeDriverManager().install()), options=chrome_options)
 
 # Termo de busca
-produto = "pneu aro 15"
+produto = "notebook"
 
 # Acessar Amazon
 driver.get("https://www.amazon.com.br")
